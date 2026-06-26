@@ -32,6 +32,15 @@ df = pd.read_csv(CSV_PATH)
 # Strings vazias precisam virar NA para que dropna() e isna() funcionem corretamente.
 df = df.replace("", pd.NA)
 
+# Normalização de nomes de times com variações no dataset:
+_nomes = {
+    "Santos FC":    "Santos",
+    "Goiás EC":     "Goiás",
+    "Athletico-PR": "Atlético-PR",
+}
+df["time_mandante"] = df["time_mandante"].replace(_nomes)
+df["time_visitante"] = df["time_visitante"].replace(_nomes)
+
 colunas_numericas = [
     "ano_campeonato", "rodada", "publico", "publico_max",
     "colocacao_mandante", "colocacao_visitante",
