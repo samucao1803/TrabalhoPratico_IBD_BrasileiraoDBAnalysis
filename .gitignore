@@ -1,4 +1,17 @@
-# Cache Python
+# Python
 __pycache__/
 *.py[cod]
 .venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local credentials (copy .env.example to .env)
+.env
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

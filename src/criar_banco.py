@@ -17,7 +17,7 @@ register_adapter(np.bool_,   lambda v: AsIs(bool(v)))
 # Caminho absoluto baseado no próprio arquivo para funcionar independente
 # do diretório de trabalho em que o script for chamado.
 _DIR = os.path.dirname(os.path.abspath(__file__))
-CSV_PATH = os.path.join(_DIR, "dados", "brasileirao.csv")
+CSV_PATH = os.path.join(_DIR, "..", "data", "brasileirao.csv")
 
 DB_CONFIG = {
     "host":     os.getenv("DB_HOST", "localhost"),
